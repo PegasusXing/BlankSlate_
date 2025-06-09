@@ -1,0 +1,34 @@
+# === CLion / JetBrains ===
+.idea/
+*.iml
+
+# === CMake build ===
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# === Build outputs ===
+bin/
+lib/
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.o
+*.obj
+*.pch
+
+# === Logs and temporary ===
+*.log
+*.tmp
+
+# === System ===
+.DS_Store
+Thumbs.db
+
+# === Git submodules (don't ignore actual submodules) ===
+*.swp
