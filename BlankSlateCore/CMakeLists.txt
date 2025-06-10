@@ -19,13 +19,13 @@ add_library(BlankSlateCore SHARED
         ${BLANKSLATE_CORE_SOURCE_DIR}/BlankSlate/EntryPoint.h
         ${BLANKSLATE_CORE_SOURCE_DIR}/BlankSlate.h)
 
+target_include_directories(BlankSlateCore PUBLIC ${BLANKSLATE_CORE_SOURCE_DIR})
+
+target_compile_definitions(BlankSlateCore PRIVATE BLANKSLATE_PLATFORM_WINDOWS BLANKSLATE_BUILD_DLL)
+
 # Copy the DLL to the sandbox bin folder after building
 add_custom_command(TARGET BlankSlateCore POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
         $<TARGET_FILE:BlankSlateCore>
         ${CMAKE_BINARY_DIR}/BlankSlateSandbox/bin/
 )
-
-target_include_directories(BlankSlateCore PUBLIC ${BLANKSLATE_CORE_SOURCE_DIR})
-
-target_compile_definitions(BlankSlateCore PRIVATE BLANKSLATE_PLATFORM_WINDOWS BLANKSLATE_BUILD_DLL)
