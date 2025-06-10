@@ -1,7 +1,5 @@
 #include "Application.h"
 
-#include "spdlog/spdlog.h"
-
 
 namespace BlankSlate {
     Application::Application() {
@@ -11,9 +9,6 @@ namespace BlankSlate {
     }
 
     void Application::Run() {
-        spdlog::info("Welcome to spdlog!");
-        spdlog::info("Welcome to spdlog!");
-
         while (true) {
         }
     }
