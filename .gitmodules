@@ -1,0 +1,3 @@
+[submodule "BlankSlateCore/vendor/spdlog"]
+	path = BlankSlateCore/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git

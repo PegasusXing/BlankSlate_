@@ -11,6 +11,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/BlankSlateCore/lib)
 # Project Directories:
 set(BLANKSLATE_CORE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/source)
 
+# Add spdlog git submodule
+add_subdirectory(vendor/spdlog)
+
 # Add Library:
 add_library(BlankSlateCore SHARED
         ${BLANKSLATE_CORE_SOURCE_DIR}/BlankSlate/Application.cpp
@@ -18,6 +21,9 @@ add_library(BlankSlateCore SHARED
         ${BLANKSLATE_CORE_SOURCE_DIR}/BlankSlate/Core.h
         ${BLANKSLATE_CORE_SOURCE_DIR}/BlankSlate/EntryPoint.h
         ${BLANKSLATE_CORE_SOURCE_DIR}/BlankSlate.h)
+
+# Include spdlog headers
+target_link_libraries(BlankSlateCore PUBLIC spdlog::spdlog)
 
 target_include_directories(BlankSlateCore PUBLIC ${BLANKSLATE_CORE_SOURCE_DIR})
 
